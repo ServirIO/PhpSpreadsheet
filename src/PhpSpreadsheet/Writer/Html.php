@@ -238,7 +238,7 @@ class Html extends BaseWriter
      *
      * @return string
      */
-    private function mapBorderStyle($borderStyle)
+    protected function mapBorderStyle($borderStyle)
     {
         switch ($borderStyle) {
             case Border::BORDER_NONE:
@@ -1072,7 +1072,7 @@ class Html extends BaseWriter
      *
      * @return string
      */
-    private function createCSSStyleBorder(Border $pStyle)
+    protected function createCSSStyleBorder(Border $pStyle)
     {
         //    Create CSS - add !important to non-none border styles for merged cells
         $borderStyle = $this->mapBorderStyle($pStyle->getBorderStyle());

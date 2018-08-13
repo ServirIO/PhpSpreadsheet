@@ -90,4 +90,13 @@ class Mpdf extends Pdf
 
         parent::restoreStateAfterSave($fileHandle);
     }
+
+    protected function createCSSStyleBorder(Border $pStyle)
+    {
+        //    Create CSS - add !important to non-none border styles for merged cells
+        $borderStyle = $this->mapBorderStyle($pStyle->getBorderStyle());
+        $css = $borderStyle . ' #' . $pStyle->getColor()->getRGB();
+
+        return $css;
+    }
 }
